@@ -1,41 +1,20 @@
 
 # coding: utf-8
-
-# In[264]:
-
 import json
 from jsoncomment import JsonComment
 
 users = 'users.json'
 venues = 'venues.json'
 
-
 def load_json(filename):
     '''A simple function to load json files.'''
     
     with open(filename,'r') as f:
-        
         parser = JsonComment(json)  #Remove trailing commas
         return parser.load(f)
-    
-
-        
-    
-
-
-# In[271]:
 
 load_users = load_json(users)
-load_users
-
-
-# In[272]:
-
 load_venues = load_json(venues)
-load_venues
-
-
-# In[266]:
 
 places_to_avoid = {}  #Venues with nothing to eat/drink
 all_venues = []  #All available venues
@@ -67,26 +46,11 @@ for venue in load_venues:
                 
         
 
-         
-            
-      
-                    
-            
-
-
-# In[267]:
-
 print("Places to avoid:\n")
 for k,v in places_to_avoid.items():
     print(k,"\n\t",v)
 
-
-# In[273]:
-
 list(places_to_avoid.keys())
-
-
-# In[274]:
 
 places_to_go = set(all_venues)-set(places_to_avoid.keys())
 print("Places to go:\n")
@@ -95,7 +59,6 @@ for place in places_to_go:
     
 
 
-# In[ ]:
 
 
 
